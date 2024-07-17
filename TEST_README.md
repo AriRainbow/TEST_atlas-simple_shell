@@ -15,7 +15,7 @@ To install and run Simple Shell, follow these steps:
 
 1. **Clone the repository:**
 ```sh
-git clone https://github.com/<your-github-username>/simple_shell.git
+git clone https://github.com/HarrisonGearhart/simple_shell.git
 ```
 2. **Navigate to the project directory:**
 ```sh
