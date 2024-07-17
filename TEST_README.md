@@ -39,17 +39,17 @@ To use Simple Shell:
 ```
 
 ## Features
-- Display a prompt and wait for user input.
--Execute commands entered by the user.
--Handle command lines with arguments.
--Implement built-in commands like 'exit' and 'env'.
--Use the PATH environment variable to locate executables.
+- Display a prompt and wait for user input.<br>
+-Execute commands entered by the user.<br>
+-Handle command lines with arguments.<br>
+-Implement built-in commands like 'exit' and 'env'.<br>
+-Use the PATH environment variable to locate executables.<br>
 -Error handling and end-of-file (Ctrl+D) condition.
 
 ## Authors
-- **Ari Williams** - [AriRainbow](https://github.com/AriRainbow)
+- **Ari Williams** - [AriRainbow](https://github.com/AriRainbow)<br>
 -**Harrison Gearhart** - [HarrisonGearhart](https://github.com/HarrisonGearhart)
 
 ## Acknowledgments
-- Inspired by the Unix shell.
+- Inspired by the Unix shell.<br>
 -Thanks to the open-source community for their valuable resources.
