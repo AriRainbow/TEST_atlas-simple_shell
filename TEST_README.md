@@ -48,7 +48,7 @@ To use Simple Shell:
 
 ## Authors
 - **Ari Williams** - [AriRainbow](https://github.com/AriRainbow)<br>
--** Harrison Gearhart** - [HarrisonGearhart](https://github.com/HarrisonGearhart)
+- ** Harrison Gearhart** - [HarrisonGearhart](https://github.com/HarrisonGearhart)
 
 ## Acknowledgments
 - Inspired by the Unix shell.<br>
