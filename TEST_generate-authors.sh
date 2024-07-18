@@ -20,3 +20,10 @@ C_FILES=$(find . -name "*.c")
 echo "AUTHORS file created."
 
 # Check for Betty compliance
+for file in $C_FILES; do
+	echo "Checking $file for Betty compliance..."
+	betty-style "$file"
+	betty-doc "$file"
+done
+
+echo "Betty checks completed."
