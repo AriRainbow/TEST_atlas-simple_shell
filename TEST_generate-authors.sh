@@ -9,3 +9,14 @@ AUTHORS_FILE="AUTHORS"
 C_FILES=$(find . -name "*.c")
 
 # Create AUTHORS file
+{
+	echo "# List of contributors to the Simple Shell project."
+	echo "# This file is read by the 'generate-authors' script."
+	echo ""
+	echo "Ari Williams <mariel.williams@atlasschool.com>"
+	echo "Harrison Gearhart <harrison@example.com>"
+} > "$AUTHORS_FILE"
+
+echo "AUTHORS file created."
+
+# Check for Betty compliance
