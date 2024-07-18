@@ -16,7 +16,7 @@ C_FILES=$(find . -name "*.c")
 	echo "Ari Williams <mariel.williams@atlasschool.com>"
 	echo "Harrison Gearhart <harrison@example.com>"
 	echo ""
-	echo "Reference: [Moby AUTHORS file](https://github.com/moby/moby/blob/master/AUTHORS)
+	echo "Reference: [Moby AUTHORS file](https://github.com/moby/moby/blob/master/AUTHORS)"
 } > "$AUTHORS_FILE"
 
 echo "AUTHORS file created."
