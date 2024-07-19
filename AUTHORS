@@ -1,0 +1,7 @@
+# List of contributors to the Simple Shell project.
+# This file is read by the 'generate-authors' script.
+
+Ari Williams <mariel.williams@atlasschool.com>
+Harrison Gearhart <harrison@example.com>
+
+Reference: [Moby AUTHORS file](https://github.com/moby/moby/blob/master/AUTHORS)
