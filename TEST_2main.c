@@ -14,7 +14,7 @@ int main(void)
 {
 	char *line; /* store input line */
 	char **args; /* array stores parsed command and args */
-	int staus; /* status of last executed command */
+	int status; /* status of last executed command */
 
 	do
 	{
