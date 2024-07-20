@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "shell.h"
+#include "TEST_shell.h"
 
 /**
  * main - Entry point for the shell program.

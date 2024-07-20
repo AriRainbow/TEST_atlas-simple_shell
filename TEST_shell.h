@@ -9,6 +9,7 @@
 #include <unistd.h> /* POSIX API functions */
 #include <string.h> /* string manipualtion */
 
+char *read_line(void);
 char **parse_line(char *line);
 int execute(char **args);
 

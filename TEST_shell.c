@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <sys.wait.h>
-#include "shell.h"
+#include <sys/wait.h>
+#include "TEST_shell.h"
 
 /**
  * read_line - Read a line of input from stdin
@@ -49,15 +49,15 @@ char **parse_line(char *line)
         if (!tokens)
         {
                 /* memory allocation error */
-                fprint(stderr, "allocation error\n");
+                fprintf(stderr, "allocation error\n");
                 exit(EXIT_FAILURE);
         }
 
         /* tokenize input line using specified delimiters */
-        token = strtok(lin, DELIM);
+        token = strtok(line, DELIM);
         while (token != NULL)
         {
-                token[position++] = token;
+                tokens[position++] = token;
 
                 /* reallocate memory if buffer is exceeded */
                 if (position >= bufsize)
@@ -73,7 +73,7 @@ char **parse_line(char *line)
                 }
 
                 /* get next token */
-                token = stdtok(NULL, DELIM);
+                token = strtok(NULL, DELIM);
         }
         tokens[position] = NULL; /* null terminate array of tokens */
         return (tokens); /* array of tokens */
@@ -87,7 +87,7 @@ char **parse_line(char *line)
  */
 int execute(char **args)
 {
-        pid_t pid, wpid;
+        pid_t pid;
         int status;
 
         if (args[0] == NULL) /* emplty command entered */
@@ -117,7 +117,7 @@ int execute(char **args)
                 do
                 {
                         /* wait for child process to terminate */
-                        wpid = waitpid(pid, &status, WUNTRACED);
+                        waitpid(pid, &status, WUNTRACED);
                 }
                 while (!WIFEXITED(status) && !WIFSIGNALED(status));
         }
