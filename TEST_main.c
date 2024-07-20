@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "shell.h"
 
 /**
@@ -11,26 +13,22 @@
  */
 int main(void)
 {
-	char *line = NULL; /* pointer stores input line */
-	size_t len = 0; /* size of input buffer */
-	ssize_t nread; /* number of characters read by getline */
+	char *line; /* stores input line */
 	char **args; /* array of arguments parsed from input line */
-	int status = 1; /* status of shell, 1 running 0 exit */
+	int status; /* status of last executed command */
 
-	while (status) /* loop until status is 0, exit command */
+	do
 	{
-		printf("($) "); /* display the prompt */
-		nread = getline(&line, &len, stdin); /* read input line */
-		if (nread == -1) /* check for error reading input */
-		{
-			free(line); /* free alloc mem for line */
-			perror("getline"); /* print error message */
-			exit(EXIT_FAILURE); /* exit with failure status */
-		}
-		args = parse_line(line); /* parse input into arguments */
-		status = execute(args); /* execute parsed commands */
-		free(args); /* free alloc mem for args */
+		printf("($) "); /* display prompt */
+		line = read_line(); /* read line of input */
+		args = parse_line(line); /* parse line into arguments */
+		status = execute(args); /* execute parsed args */
+
+		/* free allocated memory */
+		free(line);
+		free(args);
 	}
-	free(line); /* free alloc mem for line before exiting */
-	return (0); /* success status */
+	while (status); /* loop until user exits */
+
+	return (0); /* exit shell */
 }
