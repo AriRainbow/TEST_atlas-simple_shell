@@ -89,22 +89,32 @@ int execute(char **args)
 {
         pid_t pid;
         int status;
+	char *command_path;
 
         if (args[0] == NULL) /* emplty command entered */
         {
                 return (1);
         }
 
+	if (command_exists_in_current_dir(args[0]))
+	{
+		command_path = args [0];
+	}
+	else
+	{
+		command_path = find_command_in_path(args[0]);
+		if (command_path == NULL)
+		{
+			fprintf(stderr, "%s: command not found\n", args[0]);
+			return (1);
+		}
+	}
+
         pid = fork(); /* create new process */
         if (pid == 0)
         {
                 /* child process */
-                if (execvp(args[0], args) == -1)
-                {
-                        /* error occured while executing command */
-                        perror("execvp");
-                }
-                exit(EXIT_FAILURE);
+                execute_command(command_path, args);
         }
         else if (pid < 0)
         {
@@ -121,6 +131,11 @@ int execute(char **args)
                 }
                 while (!WIFEXITED(status) && !WIFSIGNALED(status));
         }
+
+	if (command+path != args[0])
+	{
+		free(command_path);
+	}
 
         return (1); /* continue running shell */
 }
