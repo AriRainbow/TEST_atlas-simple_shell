@@ -5,6 +5,8 @@
 #include <string.h>
 #include "TEST_shell.h"
 
+extern char **environ; /* declare environ */
+
 /**
  * command_exists_in_current_dir - Check if command exists in
  * current directory
@@ -29,7 +31,7 @@ char *find_command_in_path(char *command)
 	char *path_env;
 	char *path_copy;
 	char *token;
-	char *full path;
+	char *full_path;
 	struct stat statbuf;
 
 	path_env = getenv("PATH");
