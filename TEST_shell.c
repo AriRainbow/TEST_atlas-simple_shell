@@ -101,6 +101,12 @@ int execute(char **args)
 		return (0); /* terminate shell */
 	}
 
+	if(strcmp(args[0], "env") == 0)
+	{
+		print_env();
+		return (1);
+	}
+
 	if (command_exists_in_current_dir(args[0]))
 	{
 		command_path = args [0];
@@ -143,4 +149,19 @@ int execute(char **args)
 	}
 
         return (1); /* continue running shell */
+}
+
+/**
+ * print_env - Prints current environment variables
+ */
+void print_env(void)
+{
+	extern char **environ;
+	char **env = environ;
+
+	while (*env)
+	{
+		printf("%s\n", *env);
+		env++;
+	}
 }
