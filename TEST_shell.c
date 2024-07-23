@@ -96,6 +96,11 @@ int execute(char **args)
                 return (1);
         }
 
+	if(strcmp(args[0], "exit") == 0) /* check for exit command */
+	{
+		return (0); /* terminate shell */
+	}
+
 	if (command_exists_in_current_dir(args[0]))
 	{
 		command_path = args [0];
@@ -132,7 +137,7 @@ int execute(char **args)
                 while (!WIFEXITED(status) && !WIFSIGNALED(status));
         }
 
-	if (command+path != args[0])
+	if (command_path != args[0])
 	{
 		free(command_path);
 	}

@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
-#include "shell.h"
+#include "TEST_shell.h"
 
 /**
  * main - entry point for shell program

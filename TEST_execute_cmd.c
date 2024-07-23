@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <string.h>
-#include "shell.h"
+#include "TEST_shell.h"
 
 /**
  * command_exists_in_current_dir - Check if command exists in

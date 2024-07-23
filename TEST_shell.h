@@ -12,5 +12,8 @@
 char *read_line(void);
 char **parse_line(char *line);
 int execute(char **args);
+int command_exists_in_current_dir(char *command);
+char *find_command_in_path(char *command);
+void execute_command(char *path, char **args);
 
 #endif
